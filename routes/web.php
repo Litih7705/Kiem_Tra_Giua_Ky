@@ -3,3 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\MovieController1::class, 'index']);
+use App\Http\Controllers\MovieController2;
+
+// Route cho Menu Thể loại (Mục 2 - Ý 2)
+Route::get('/theloai/{id}', [MovieController2::class, 'getCategory'])->name('movie.category');
+
+// Route cho Trang Chi tiết phim (Mục 2 - Ý 4)
+Route::get('/chi-tiet/{id}', [MovieController2::class, 'getDetail'])->name('movie.detail');
