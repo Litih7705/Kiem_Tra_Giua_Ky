@@ -15,11 +15,7 @@ class MovieController4 extends Controller
         $movies = DB::table('movie')->where('status', 1)->get();
         return view('admin.movie_list', compact('movies'));
     }
-    public function detail($id)
-    {
-    $movie = DB::table('movie')->where('id', $id)->first();
-    return view('detail', compact('movie'));
-    }
+
     public function delete(Request $request)
     {
         $id = $request->id;

@@ -34,7 +34,7 @@
                     <td>{{ $row->vote_average }}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{ url('movie/'.$row->id) }}" class='btn btn-sm btn-info'>Xem</a>
+                            <a href="{{ route('movie.detail', ['id' => $row->id]) }}" class='btn btn-sm btn-info'>Xem</a>
                             &nbsp;
                             <form method="POST" action="{{ route('movie.delete') }}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa?');">
                                 @csrf
