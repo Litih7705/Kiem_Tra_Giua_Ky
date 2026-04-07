@@ -2,8 +2,17 @@
 
 use App\Http\Controllers\MovieController4;
 use App\Http\Controllers\MovieController1;
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController5;
+
+
+Route::get('/', [App\Http\Controllers\MovieController1::class, 'index']);
+
+
+
+Route::get('/admin/movie/create', [MovieController5::class, 'create'])->name('admin.movie.create');
+Route::post('/admin/movie/store', [MovieController5::class, 'store'])->name('admin.movie.store');
+
 use App\Http\Controllers\MovieController3;
 
 
@@ -23,4 +32,5 @@ Route::get('/theloai/{id}', [MovieController2::class, 'getCategory'])->name('mov
 
 // Route cho Trang Chi tiết phim (Mục 2 - Ý 4)
 Route::get('/chi-tiet/{id}', [MovieController2::class, 'getDetail'])->name('movie.detail');
+
 
