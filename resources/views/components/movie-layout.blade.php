@@ -95,7 +95,7 @@
                     <h3>Millions of movies, TV shows and people to discover. Explore now.
                 </div>
                 <div class='search-input'>
-                    <form method="post" action="{{url('/timkiem')}}">
+                   <form method="GET" action="{{ route('movie.search') }}">
                         <input type="text" name='keyword' placeholder="Nhập tên bộ phim yêu thích để tìm kiếm">
                         <button class="search-btn">Tìm kiếm</button>
                         {{csrf_field()}}
